@@ -2,6 +2,7 @@ import chartUp from "../../assets/chart-up.svg";
 import chartDown from "../../assets/chart-down.svg";
 
 function TableRow({
+  currency,
   coin: {
     image,
     name,
@@ -12,6 +13,16 @@ function TableRow({
   },
   styles,
 }) {
+  const iconHandler = () => {
+    if (currency === "eur") {
+      return "€";
+    } else if (currency === "jpy") {
+      return "¥";
+    } else {
+      return "$";
+    }
+  };
+
   return (
     <tr>
       <td>
@@ -21,7 +32,10 @@ function TableRow({
         </div>
       </td>
       <td>{name}</td>
-      <td>${current_price.toLocaleString()}</td>
+      <td>
+        {iconHandler()}
+        {current_price.toLocaleString()}
+      </td>
       <td className={price_change > 0 ? styles.success : styles.error}>
         {price_change.toFixed(2)}%
       </td>
