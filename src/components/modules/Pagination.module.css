@@ -29,3 +29,7 @@
 .disabled {
   opacity: 0.3;
 }
+
+.selected {
+  background-color: #3874ff;
+}
