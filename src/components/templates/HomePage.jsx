@@ -38,7 +38,9 @@ function HomePage() {
         setChart={setChart}
       />
       <Pagination page={page} setPage={setPage} />
-      {!!chart && <Chart chart={chart} setChart={setChart}/>}
+      {!!chart && (
+        <Chart chart={chart} setChart={setChart} currency={currency} />
+      )}
     </>
   );
 }
