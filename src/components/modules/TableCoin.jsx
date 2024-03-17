@@ -2,7 +2,7 @@ import { RotatingLines } from "react-loader-spinner";
 import TableRow from "./TableRow";
 import styles from "./TableCoin.module.css";
 
-function TableCoin({ coins, isLoading, currency }) {
+function TableCoin({ coins, isLoading, currency, setChart }) {
   return (
     <div className={styles.container}>
       {isLoading ? (
@@ -26,6 +26,7 @@ function TableCoin({ coins, isLoading, currency }) {
                 key={coin.id}
                 styles={styles}
                 currency={currency}
+                setChart={setChart}
               />
             ))}
           </tbody>
