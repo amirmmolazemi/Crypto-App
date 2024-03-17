@@ -1,9 +1,11 @@
 import chartUp from "../../assets/chart-up.svg";
 import chartDown from "../../assets/chart-down.svg";
 import { marketChart } from "../../services/cryptoApi";
+import { iconHandler } from "../../helpers/currencyHandler";
 
-function TableRow({
-  coin: {
+function TableRow({ coin, styles, currency, setChart }) {
+
+  const {
     id,
     image,
     name,
@@ -11,26 +13,13 @@ function TableRow({
     total_volume,
     current_price,
     price_change_percentage_24h: price_change,
-  },
-  styles,
-  currency,
-  setChart,
-}) {
-  const iconHandler = () => {
-    if (currency === "eur") {
-      return "€";
-    } else if (currency === "jpy") {
-      return "¥";
-    } else {
-      return "$";
-    }
-  };
+  } = coin;
 
   const showHandler = async () => {
     try {
       const res = await fetch(marketChart(id));
       const json = await res.json();
-      setChart(json);
+      setChart({ ...json, coin });
     } catch (error) {
       setChart(null);
     }
@@ -46,7 +35,7 @@ function TableRow({
       </td>
       <td>{name}</td>
       <td>
-        {iconHandler()}
+        {iconHandler(currency)}
         {current_price.toLocaleString()}
       </td>
       <td className={price_change > 0 ? styles.success : styles.error}>
