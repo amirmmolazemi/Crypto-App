@@ -1,8 +1,15 @@
-# React + Vite
+# Crypto App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Hi everyone
+#### in this project i developed a Crypto app using charts and coin gecko [api](https://coingecko.com)
+  
+### features: 
+### 1. you can see crypto coins  
+![main page](/crypto-image/React-Crypto-App.png "project") 
+<br/>
+### 2. you can go to previous or next page with a paginate
+  ![paginate](/crypto-image/paginate.png "paginate")
+<br/>
+### 3. you can see the details of each item with charts
+  ![chart](/crypto-image/chart.png "chart")
+<br/>
